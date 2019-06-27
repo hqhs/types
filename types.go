@@ -1,0 +1,23 @@
+package types
+
+//go:generate gotemplate "github.com/hqhs/types/template" Bool(bool)
+//go:generate gotemplate "github.com/hqhs/types/template" Byte(byte)
+//go:generate gotemplate "github.com/hqhs/types/template" Complex128(complex128)
+//go:generate gotemplate "github.com/hqhs/types/template" Complex64(complex64)
+//go:generate gotemplate "github.com/hqhs/types/template" Float32(float32)
+//go:generate gotemplate "github.com/hqhs/types/template" Float64(float64)
+//go:generate gotemplate "github.com/hqhs/types/template" Int(int)
+//go:generate gotemplate "github.com/hqhs/types/template" Int16(int16)
+//go:generate gotemplate "github.com/hqhs/types/template" Int32(int32)
+//go:generate gotemplate "github.com/hqhs/types/template" Int64(int64)
+//go:generate gotemplate "github.com/hqhs/types/template" Int8(int8)
+//go:generate gotemplate "github.com/hqhs/types/template" Rune(rune)
+//go:generate gotemplate "github.com/hqhs/types/template" String(string)
+//go:generate gotemplate "github.com/hqhs/types/template" Uint(uint)
+//go:generate gotemplate "github.com/hqhs/types/template" Uint16(uint16)
+//go:generate gotemplate "github.com/hqhs/types/template" Uint32(uint32)
+//go:generate gotemplate "github.com/hqhs/types/template" Uint64(uint64)
+//go:generate gotemplate "github.com/hqhs/types/template" Uint8(uint8)
+//go:generate gotemplate "github.com/hqhs/types/template" Uintptr(uintptr)
+
+//go:generate gotemplate "github.com/hqhs/types/template" Time(time.Time)
