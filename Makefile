@@ -1,3 +1,5 @@
+IMPORT?=""
+
 all: test readme
 
 test: generate
@@ -14,3 +16,11 @@ readme:
 setup:
 	go get github.com/ncw/gotemplate
 	go get github.com/robertkrimen/godocdown/godocdown
+
+replace:
+	@set -e; \
+	if [ -z "$(IMPORT)" ]; then \
+		grep -rl "github.com/hqhs/types" . | xargs set -i '$(IMPORT)' \
+	else \
+		echo "IMPORT env variable is not set"
+	fi

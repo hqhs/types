@@ -19,7 +19,7 @@ type T string
 type Optional optional
 
 type optional struct {
-	Val T
+	V   T
 	Set bool
 }
 
@@ -73,7 +73,7 @@ func (o Optional) IsPresent() bool {
 // If calls the function if there is a value wrapped by this optional.
 func (o Optional) If(f func(value T)) {
 	if o.IsPresent() {
-		f(o.Val)
+		f(o.V)
 	}
 }
 
@@ -110,7 +110,7 @@ func (o Optional) String() string {
 // being wrapped, the zero value of its type is marshaled.
 func (o Optional) MarshalJSON() (data []byte, err error) {
 	if o.Set {
-		return json.Marshal(o.Val)
+		return json.Marshal(o.V)
 	}
 	return []byte("null"), nil
 }
