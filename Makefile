@@ -20,7 +20,7 @@ setup:
 replace:
 	@set -e; \
 	if [ -z "$(IMPORT)" ]; then \
-		grep -rl "github.com/hqhs/types" . | xargs set -i '$(IMPORT)' \
+		echo "IMPORT env variable is not set"; \
 	else \
-		echo "IMPORT env variable is not set"
+		grep -rl "github.com/hqhs/types" . | xargs sed -i '' -e 's:example.com/hqhs/types:$(IMPORT)/:g'; \
 	fi
