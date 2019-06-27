@@ -22,5 +22,5 @@ replace:
 	if [ -z "$(IMPORT)" ]; then \
 		echo "IMPORT env variable is not set"; \
 	else \
-		grep -rl "github.com/hqhs/types" . | xargs sed -i '' -e 's:example.com/hqhs/types:$(IMPORT)/:g'; \
+		grep -rl "github.com/hqhs/types" . | xargs sed -i '' -e 's:github.com/hqhs/types:$(IMPORT):g'; \
 	fi
