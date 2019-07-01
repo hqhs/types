@@ -25,7 +25,7 @@ type optional struct {
 
 // Of wraps the value in an optional.
 func Of(value T) Optional {
-	return Optional{Val: value, Set: true}
+	return Optional{V: value, Set: true}
 }
 
 func OfOptionalPtr(ptr *T) Optional {
@@ -60,7 +60,7 @@ func (o Optional) Value() (value interface{}, ok bool) {
 
 func (o Optional) Ptr() (value *T) {
 	if o.Set {
-		return &o.Val
+		return &o.V
 	}
 	return nil
 }
