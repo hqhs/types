@@ -17,9 +17,10 @@ Types: template for optional types suitable for any project
 
 Sometimes input for your code could have optional optional values. It's
 definetly possible to build entire codebase using default zero-values for each
-type. Google does that, (TODO proof link?) and since golang enforces you to
-write code in google's way, it does exacly what then encoding/decoding data to
-various formats  (TODO proof links). But different companies has different
+type. I believe google does that, but couldn't find proof link, kind of guessing
+based on how optional fields implemented in gRPC and Go, and since golang enforces you to
+write code in such way, it does exacly [what](https://golang.org/pkg/encoding/json/#Marshal) then encoding/decoding data to
+various formats. But different companies has different
 approaches and not everyone has 20 years of expirience of building systems that
 scales well, and in that scenario default zero value could break old
 compatability. There're two major ways to do deal with what:
@@ -28,9 +29,9 @@ compatability. There're two major ways to do deal with what:
 
 ``` go
 type Data struct {
-    id int
-    name *string
-    description *string
+    id int `json:"id"`
+    name *string `json:"name"`
+    description *string `josn:"description"`
 }
 ```
 
@@ -38,7 +39,7 @@ I'm have comprehensive explanation why it's terrible here (TODO blog post link).
 
 TL;DR: It's classique example of [billion dollar
 mistake](https://en.wikipedia.org/w/index.php?title=Tony_Hoare&action=edit&section=3&editintro=Template:BLP_editintro),
-which breaks thousands of production services. One single missed check from
+which had broke thousands of production services. One single missed check from
 programmer and your runtime crashed because of NillPointerDereference. 
 
 - Using optional fields:
