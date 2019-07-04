@@ -35,7 +35,7 @@ type Data struct {
 }
 ```
 
-I'm have comprehensive explanation why it's terrible here (TODO blog post link).
+I'm have comprehensive explanation why it's terrible [here](https://hqhs.github.io/blog/2019/optional-types-in-go-in-done-right/).
 
 TL;DR: It's classique example of [billion dollar
 mistake](https://en.wikipedia.org/w/index.php?title=Tony_Hoare&action=edit&section=3&editintro=Template:BLP_editintro),
